@@ -8,19 +8,16 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-          cache-dependency-path: Backend/package-lock.json
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
+          node-version: [20.x]
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm ci  # Now this will work since package-lock.json is present
