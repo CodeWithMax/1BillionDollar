@@ -10,6 +10,13 @@ app.get('/', (req: Request, res: Response) => {
   })
 });
 
+app.get('/public', (req: Request, res: Response) => {
+  res.status(200).json({
+    success:true,
+    message:"messsage from public page"
+  })
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
