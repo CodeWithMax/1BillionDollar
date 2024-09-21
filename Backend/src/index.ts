@@ -1,12 +1,12 @@
 import express, { Request, Response } from 'express';
 
 const app = express();
-const port = 3000;
+const port = 5500;
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).json({
     success:true,
-    message:"Server is up and running for 1Billiondollar!~!"
+    message:"Server is up and running for land"
   })
 });
 
@@ -18,5 +18,6 @@ app.get('/public', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server is running at${port}`); 
 });
+
