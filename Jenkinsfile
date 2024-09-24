@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run the server
-                    sh 'node dist/index.js'
+                    sh 'node src/index.js'
                 }
             }
         }
