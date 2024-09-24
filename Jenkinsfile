@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run the server
-                    sh 'npm start'
+                    sh 'npm install'
                 }
             }
         }
