@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run the server
-                    sh 'node src/index.js'
+                    sh 'npm start'
                 }
             }
         }
